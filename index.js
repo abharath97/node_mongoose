@@ -10,12 +10,11 @@ connect.then((db) => {
 
     console.log("Connected coreectly to Server !");
 
-    var newDish = Dishes({
+    Dishes.create({
         name: 'Pizza',
         description : 'Italian food !!'
-    });
-
-    newDish.save()
+    })
+    
     .then((dish)=> {
         console.log(dish);
         return Dishes.find({}).exec();
